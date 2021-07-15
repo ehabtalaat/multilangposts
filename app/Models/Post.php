@@ -22,6 +22,24 @@ class Post extends Model
                 'source' => 'titlear',
             ],
         ];
-        //https://restpilot.paylink.sa
+        
+    } public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function getTitleenAttribute()
+    {
+        return $this->getTranslation('title', 'en');
+    }
+
+    public function getTitlearAttribute()
+    {
+        return $this->getTranslation('title', 'ar');
+    }
+
+    public function getTitlecaAttribute()
+    {
+        return $this->getTranslation('title', 'ca');
     }
 }
